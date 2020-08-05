@@ -1,0 +1,7 @@
+[pull]
+	rebase = false
+[user]
+	email = maayan10.k@gmail.com
+	name = Maayan Kestenberg
+[credential "https://github.com"]
+	username = Puntsiluntsi
