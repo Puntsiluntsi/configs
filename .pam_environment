@@ -1,0 +1,6 @@
+EDITOR="emacsclient --tty --alternate-editor=vim"
+VISUAL="emacsclient --create-frame --alternate-editor="
+BROWSER=qutebrowser
+
+# Preferred terminal emulator program variable:
+TERMINAL=st
