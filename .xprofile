@@ -1,1 +1,6 @@
 setxkbmap -option caps:escape
+
+sxhkd &
+#systemctl --user start sxhkd
+
+export EDITOR=$VISUAL
