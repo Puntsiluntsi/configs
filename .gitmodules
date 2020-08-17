@@ -1,6 +1,8 @@
 [submodule ".vim"]
 	path = .vim
 	url = https://www.github.com/Puntsiluntsi/vimfiles
+	branch = master
 [submodule ".doom.d"]
 	path = .doom.d
 	url = https://www.github.com/Puntsiluntsi/doom-emacs-config
+	branch = master
