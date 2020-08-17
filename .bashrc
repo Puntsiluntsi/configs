@@ -56,11 +56,24 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+debian_chroot_prefix='${debian_chroot:+($debian_chroot)}'
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+white='\[\033[00m\]'
+lightgreen='\[\033[01;32m\]'
+purple='\[\033[01;34m\]'
+
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    unset white lightgreen purple
 fi
+
+wd_prompt="$purple\w$white\$ "
+user_host_wd_prompt="$lightgreen\u@\h$white:$wd_prompt"
+ubuntu_default_prompt="$debian_chroot_prefix$user_host_wd_prompt"
+
+PS1=$wd_prompt
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
