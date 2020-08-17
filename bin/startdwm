@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+# Terminate all subprocesses (dwm) and exit with exit code 0 when sent a SIGTERM.
+trap "trap 'exit 0' SIGTERM && kill -- -$$" SIGTERM
+
+while true; do
+      dwm&
+      wait
+done
