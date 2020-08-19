@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+eval '
+foo(){
+ echo 5
+}
+'
+# TODO: make a wrapper around getopt which in which aliases are easier to express (like '-v|--verbose')
+# TODO: generalize this for mv,rm,ln using eval?
+# TODO: find better solution to not create the directory when cp has an error like -r not specified for copying directory
+cmdwithmd() {
+local cmd=$1; shift
+
+# parse options, and only keep -v and --verbose (to pass into mkdir).
+local filteredargs=$(getopt -qu -o 'v' -l 'verbose' -n 'mvfunc-mkdir_filter' -- "$@")
+
+local mkdiropts=${filteredargs%% -- *} # Options to pass into mkdir aswell
+local pospars=(${filteredargs#* -- }) # Array of the positional parameters (non-options)
+local source=${pospars[0]}
+local dest=${pospars[1]}
+if [ -e $source ]
+then
+    command mkdir -p $mkdiropts $source $(dirname $dest)
+fi && command $cmd $@ # run cmd with the original options and arguments
+}
+
+function mv(){
+    cmdwithmd mv $@
+}

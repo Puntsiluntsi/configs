@@ -1,0 +1,16 @@
+#+TITLE: Todo
+
+* TODO Learn to use org todo more efficiently.
+* TODO DWM select and tag urgent window.
+* TODO Continue searching for a way to handle the echo area
+* TODO Make ^ work with a count in vim/evil
+* TODO Improve prompt setting in .bashrc (consider moving to .bash_profile) as in https://stackoverflow.com/questions/39557389/bash-file-local-variables (using tput)
+* TODO Bind j,k to navigate between visual lines?
+* TODO DWM add a 'window menu' to add some window to the current tag
+* TODO DWM consider adding a bind to send window to the next tag?
+
+* TODO Make mv,cp and ln create directories when needed (and allow verbosely show directories created with -v)
+** Make seperate flag for interactive mkdir to potentially be used here.
+* TODO Create .config/bash folder with an aliases file, etc. and symlink .bashrc to .config/bash/bashrc.
+* TODO Make emacs shell not scroll down to the end of a long output, and bind A to GA
+* TODO Make general way to switch between a horizontal version of a layout and a vertical one for any possible layout in the window manager.

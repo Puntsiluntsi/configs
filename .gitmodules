@@ -6,3 +6,6 @@
 	path = .doom.d
 	url = https://www.github.com/Puntsiluntsi/doom-emacs-config
 	branch = master
+[submodule "dwm"]
+	path = dwm
+	url = https://github.com/Puntsiluntsi/dwm.git
